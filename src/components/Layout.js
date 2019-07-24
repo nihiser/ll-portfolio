@@ -202,7 +202,7 @@ const Layout = ({ children, customSEO }) => {
         <GlobalStyle />
         {children}
         <Footer>
-          &copy; 2019 by LekoArts. All rights reserved. <br />
+          &copy; 2019 All rights reserved. <br />
         </Footer>
       </>
     </ThemeProvider>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import { Layout, Article, Wrapper, Button, SectionTitle } from '../components'
+import { Layout, Article, Wrapper } from '../components'
 
 const Content = styled.div`
   grid-column: 2;
@@ -27,13 +27,28 @@ const IndexPage = ({
   <Layout>
     <Wrapper>
       <Content>
-        {posts.map(post => (
+        <h1>Selected client work</h1>
+        {posts.map(post => 
+        ( post.frontmatter.type == 'work' &&
           <Article
             title={post.frontmatter.title}
             slug={post.fields.slug}
             key={post.fields.slug}
           />
-        ))}
+          )
+        )}
+
+        <h1>Personal projects</h1>
+        {posts.map(post => 
+          ( post.frontmatter.type == 'project' &&
+            <Article
+              title={post.frontmatter.title}
+              slug={post.fields.slug}
+              key={post.fields.slug}
+            />
+            )
+          )}
+        
       </Content>
     </Wrapper>
   </Layout>
@@ -51,13 +66,14 @@ IndexPage.propTypes = {
 
 export const IndexQuery = graphql`
   query IndexQuery {
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: ASC }) {
       nodes {
         fields {
           slug
         }
         frontmatter {
           title
+          type
         }
       }
     }

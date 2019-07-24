@@ -34,7 +34,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const postTemplate = require.resolve('./src/templates/post.js')
-  const categoryTemplate = require.resolve('./src/templates/category.js')
 
   const result = await wrapper(
     graphql(`
@@ -46,7 +45,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
             frontmatter {
               title
-              categories
+              type
             }
           }
         }
@@ -67,28 +66,6 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: n.fields.slug,
         prev,
         next,
-      },
-    })
-  })
-
-  const categorySet = new Set()
-
-  _.each(posts, n => {
-    if (_.get(n, 'frontmatter.categories')) {
-      n.frontmatter.categories.forEach(cat => {
-        categorySet.add(cat)
-      })
-    }
-  })
-
-  const categories = Array.from(categorySet)
-
-  categories.forEach(category => {
-    createPage({
-      path: `/categories/${_.kebabCase(category)}`,
-      component: categoryTemplate,
-      context: {
-        category,
       },
     })
   })

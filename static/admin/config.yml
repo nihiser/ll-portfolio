@@ -3,32 +3,32 @@ backend:
   repo: nihiser/ll-portfolio
 
 media_folder: static/assets
-public_folder: /img
+public_folder: /assets
 
 collections:
   - name: "work"
     label: "Work"
     folder: "blog"
+    filter: {field: type, value: "work"}
     create: true
     format: frontmatter
     extension: "mdx"
     slug: "work-{{slug}}"
-    editor:
-     preview: false
     fields:
+      - { label: "Type", name: "type", widget: "select", options: ["work", "project"]  }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "date" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "projects"
-    label: "Projects"
+  - name: "project"
+    label: "Project"
     folder: "blog"
+    filter: {field: type, value: "project"}
     create: true
     format: frontmatter
     extension: "mdx"
     slug: "project-{{slug}}"
-    editor:
-     preview: false
     fields:
+      - { label: "Type", name: "type", widget: "select", options: ["work", "project"]  }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "date" }
       - { label: "Body", name: "body", widget: "markdown" }

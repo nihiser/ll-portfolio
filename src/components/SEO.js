@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import config from '../../config'
 
 const SEO = props => {
-  const { postNode, postPath, article, buildTime } = props
+  const { postNode, postPath, article } = props
 
   let title
   let description
@@ -55,7 +55,6 @@ const SEO = props => {
       name: config.author,
     },
     datePublished: '2019-01-07T10:30:00+01:00',
-    dateModified: buildTime,
     image: {
       '@type': 'ImageObject',
       url: image,
@@ -179,12 +178,10 @@ SEO.propTypes = {
   postNode: PropTypes.object,
   postPath: PropTypes.string,
   article: PropTypes.bool,
-  buildTime: PropTypes.string,
 }
 
 SEO.defaultProps = {
   postNode: null,
   postPath: null,
   article: false,
-  buildTime: null,
 }

@@ -4,7 +4,6 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 import SEO from './SEO'
 import theme from '../../config/theme'
-import useBuildTime from '../hooks/useBuildTime'
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -195,18 +194,15 @@ const Footer = styled.footer`
 `
 
 const Layout = ({ children, customSEO }) => {
-  const buildTime = useBuildTime()
 
   return (
     <ThemeProvider theme={theme}>
       <>
-        {!customSEO && <SEO buildTime={buildTime} />}
+        {!customSEO && <SEO />}
         <GlobalStyle />
         {children}
         <Footer>
           &copy; 2019 by LekoArts. All rights reserved. <br />
-          <a href="https://github.com/LekoArts/gatsby-starter-minimal-blog">GitHub Repository</a> <br />
-          <span>Last build: {buildTime}</span>
         </Footer>
       </>
     </ThemeProvider>

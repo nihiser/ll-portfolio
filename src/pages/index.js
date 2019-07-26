@@ -7,6 +7,7 @@ import { Layout, Article, Wrapper } from '../components'
 
 const ContentWrapper = styled.div`
   display: grid;
+  height: 100vh;
   grid-template-columns: repeat(6, 1fr [col-start]);
 `
 
@@ -28,13 +29,13 @@ const About = styled.div`
   grid-column: 5 / span 2;
   background: black;
   padding: 0 3rem;
-  position: relative
 `
 
 const Biography = styled.p`
   color: white;
-  position: absolute;
-  bottom: 0;
+  display: table-cell;
+  vertical-align: bottom;
+  height: 95vh;
 `
 
 const IndexPage = ({

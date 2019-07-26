@@ -5,8 +5,13 @@ import styled from 'styled-components'
 
 import { Layout, Article, Wrapper } from '../components'
 
+const ContentWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr [col-start]);
+`
+
 const Content = styled.div`
-  grid-column: 2;
+  grid-column: 1/span 4;
   box-shadow: 0 4px 120px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   padding: 3rem 6rem;
@@ -19,13 +24,26 @@ const Content = styled.div`
   overflow: hidden;
 `
 
+const About = styled.div`
+  grid-column: 5 / span 2;
+  background: black;
+  padding: 0 3rem;
+  position: relative
+`
+
+const Biography = styled.p`
+  color: white;
+  position: absolute;
+  bottom: 0;
+`
+
 const IndexPage = ({
   data: {
     allMdx: { nodes: posts },
   },
 }) => (
   <Layout>
-    <Wrapper>
+    <ContentWrapper>
       <Content>
         <h1>Selected client work</h1>
         {posts.map(post => 
@@ -37,7 +55,7 @@ const IndexPage = ({
           />
           )
         )}
-
+        <hr></hr>
         <h1>Personal projects</h1>
         {posts.map(post => 
           ( post.frontmatter.type == 'project' &&
@@ -48,9 +66,15 @@ const IndexPage = ({
             />
             )
           )}
-        
       </Content>
-    </Wrapper>
+      <About>
+          <Biography>
+            Hey! I'm Lauren, a designer and cook based in Dayton, OH.
+            In the past I've been a product designer, cheese connoisseur, and seamstress.
+            These days, I make pasta and research North Korea in my free time.
+          </Biography>
+      </About>
+    </ContentWrapper>
   </Layout>
 )
 

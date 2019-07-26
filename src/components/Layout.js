@@ -201,9 +201,6 @@ const Layout = ({ children, customSEO }) => {
         {!customSEO && <SEO />}
         <GlobalStyle />
         {children}
-        <Footer>
-          &copy; 2019 All rights reserved. <br />
-        </Footer>
       </>
     </ThemeProvider>
   )

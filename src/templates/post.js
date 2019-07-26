@@ -50,7 +50,7 @@ const PostContent = styled.div`
   margin-top: 4rem;
 `
 
-const Post = ({ pageContext: { slug, prev, next }, data: { mdx: postNode } }) => {
+const Post = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
   const post = postNode.frontmatter
 
   return (
@@ -82,13 +82,6 @@ Post.propTypes = {
   data: PropTypes.shape({
     mdx: PropTypes.object.isRequired,
   }).isRequired,
-}
-
-Post.defaultProps = {
-  pageContext: PropTypes.shape({
-    next: null,
-    prev: null,
-  }),
 }
 
 export const postQuery = graphql`

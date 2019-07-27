@@ -12,6 +12,23 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sharp',
     {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-unwrap-images',
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1024,
+              quality: 90,
+              linkImagesToOriginal: true,
+            }
+        }
+      ]},
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'post',
@@ -33,15 +50,6 @@ module.exports = {
             options: {
               target: '_blank',
               rel: 'nofollow noopener noreferrer',
-            },
-          },
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 830,
-              quality: 90,
-              withWebp: true,
-              linkImagesToOriginal: false,
             },
           },
           // TODO: Replace with "mdx-component-autolink-headers"

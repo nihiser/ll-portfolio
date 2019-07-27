@@ -126,6 +126,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 0 1rem 0;
   }
   img {
+    height: 100%;
+    width: 100%;
     vertical-align: middle;
   }
   [role='button'] {

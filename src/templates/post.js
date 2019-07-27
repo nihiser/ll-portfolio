@@ -9,7 +9,7 @@ import { Layout, Wrapper, Header, SEO } from '../components'
 import config from '../../config'
 
 const Content = styled.article`
-  grid-column: 5 / -1;
+  grid-column: 3 / -2;
 `
 
 const Title = styled.h1`
@@ -17,7 +17,8 @@ const Title = styled.h1`
 `
 
 const PostContent = styled.div`
-
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 `
 
 const Post = ({ pageContext: { slug }, data: { mdx: postNode } }) => {

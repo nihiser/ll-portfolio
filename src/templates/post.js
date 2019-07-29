@@ -9,7 +9,7 @@ import { Layout, Wrapper, Header, SEO } from '../components'
 import config from '../../config'
 
 const Content = styled.article`
-  grid-column: 3 / -2;
+  grid-column: 2 / -2;
 `
 
 const Title = styled.h1`
@@ -32,8 +32,8 @@ const Post = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
           <Link to="/">{config.siteTitle}</Link>
         </Header>
         <Content>
-          <Title>{post.title}</Title>
-          <PostContent>
+          <PostContent className="PostContentWrapper">
+            <Title>{post.title}</Title>
             <MDXRenderer>{postNode.body}</MDXRenderer>
           </PostContent>
         </Content>

@@ -31,6 +31,14 @@ const TitleWrapper = styled.div`
   }
 `
 
+const Arrow = styled.div`
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid blue;
+`
+
 const Post = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
   const post = postNode.frontmatter
 
@@ -39,7 +47,9 @@ const Post = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
       <Wrapper>
         <SEO postPath={slug} postNode={postNode} article />
         <Header>
-          <Link to="/">{config.siteTitle}</Link>
+          <Link to="/">
+            <Arrow/>
+          </Link>
         </Header>
         <Content>
           <PostContent className="PostContentWrapper">

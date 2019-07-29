@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import { Layout, Article, Wrapper } from '../components'
+import { Layout, Article, Wrapper, Header, SEO } from '../components'
 
 const Content = styled.div`
   grid-column: 1/span 4;
@@ -12,6 +12,7 @@ const Content = styled.div`
 
 const About = styled.div`
   grid-column: 5 / span 2;
+  grid-row: 1 / 3;
   background: black;
   padding: 3rem 4rem;
   position: relative;
@@ -29,6 +30,14 @@ const BiographyWrapper = styled.div`
   position: relative;
 `
 
+const Arrow = styled.div`
+  width: 0px;
+  height: 0px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid black;
+`
+
 const IndexPage = ({
   data: {
     allMdx: { nodes: posts },
@@ -36,6 +45,10 @@ const IndexPage = ({
 }) => (
   <Layout>
     <Wrapper>
+     <SEO postPath="/" />
+      <Header>
+        <Arrow />
+      </Header>
       <Content>
         <h1>Selected client work</h1>
         {posts.map(post => 

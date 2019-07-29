@@ -42,6 +42,7 @@ const IndexPage = ({
         ( post.frontmatter.type == 'work' &&
           <Article
             title={post.frontmatter.title}
+            category={post.frontmatter.category}
             slug={post.fields.slug}
             key={post.fields.slug}
           />
@@ -53,6 +54,7 @@ const IndexPage = ({
           ( post.frontmatter.type == 'project' &&
             <Article
               title={post.frontmatter.title}
+              category={post.frontmatter.category}
               slug={post.fields.slug}
               key={post.fields.slug}
             />
@@ -91,6 +93,7 @@ export const IndexQuery = graphql`
         }
         frontmatter {
           title
+          category
           designURL
           type
         }

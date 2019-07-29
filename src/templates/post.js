@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
-import kebabCase from 'lodash/kebabCase'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import { Layout, Wrapper, Header, SEO } from '../components'
@@ -14,11 +13,22 @@ const Content = styled.article`
 
 const Title = styled.h1`
   margin-bottom: 1rem;
+  display: table-cell;
+  vertical-align: middle;
 `
 
 const PostContent = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+`
+const TitleWrapper = styled.div`
+  display: table;
+
+  .DesignLink {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
 `
 
 const Post = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
@@ -33,7 +43,10 @@ const Post = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
         </Header>
         <Content>
           <PostContent className="PostContentWrapper">
-            <Title>{post.title}</Title>
+            <TitleWrapper>
+              <Title>{post.title}</Title>
+              { post.designURL ?  <a href={ 'http://' + post.designURL } target="_blank" className="DesignLink">{post.designURL}</a> : ''}
+            </TitleWrapper>
             <MDXRenderer>{postNode.body}</MDXRenderer>
           </PostContent>
         </Content>
@@ -60,6 +73,7 @@ export const postQuery = graphql`
       excerpt
       frontmatter {
         title
+        designURL
         date(formatString: "MM/DD/YYYY")
       }
       timeToRead

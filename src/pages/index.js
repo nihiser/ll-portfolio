@@ -91,6 +91,7 @@ export const IndexQuery = graphql`
         }
         frontmatter {
           title
+          designURL
           type
         }
       }

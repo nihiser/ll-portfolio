@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { MDXProvider } from '@mdx-js/react'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 import SEO from './SEO'
@@ -187,24 +188,42 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Footer = styled.footer`
-  text-align: center;
-  padding: 3rem 1rem;
-  span {
-    font-size: 0.75rem;
-  }
-`
 
 const Layout = ({ children, customSEO }) => {
-
   return (
-    <ThemeProvider theme={theme}>
-      <>
-        {!customSEO && <SEO />}
-        <GlobalStyle />
-        {children}
-      </>
-    </ThemeProvider>
+    <MDXProvider 
+      components={{
+        wrapper: ({ children, ...props }) => {
+          if(!children) {
+            return <div>Loading...</div>
+          }
+          return (
+          React.Children.map(children, (child, i) => {
+            let element = child.props.children
+            if (!element.props) {
+              return child
+            } else if (element.props.mdxType == "img"){
+              return (
+                <div className="PostImageWrapper">
+                  <img className="PostImage" src={element.props.src} alt={element.props.alt}/>
+                </div>
+              )
+            }
+            else {
+              return child
+            }
+          })
+          )
+        },
+      }}>
+      <ThemeProvider theme={theme}>
+        <>
+          {!customSEO && <SEO />}
+          <GlobalStyle />
+          {children}
+        </>
+      </ThemeProvider>
+    </MDXProvider>
   )
 }
 

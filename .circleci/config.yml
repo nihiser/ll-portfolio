@@ -2,7 +2,7 @@ executors:
   node:
     parameters:
       image:
-        type: string
+        type: img
         default: "10"
     docker:
     - image: circleci/node:<< parameters.image >>

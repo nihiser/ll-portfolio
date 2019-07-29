@@ -5,11 +5,6 @@ import styled from 'styled-components'
 
 import { Layout, Article, Wrapper } from '../components'
 
-const ContentWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(6, 1fr [col-start]);
-`
-
 const Content = styled.div`
   grid-column: 1/span 4;
   padding: 1rem;
@@ -40,7 +35,7 @@ const IndexPage = ({
   },
 }) => (
   <Layout>
-    <ContentWrapper>
+    <Wrapper>
       <Content>
         <h1>Selected client work</h1>
         {posts.map(post => 
@@ -73,7 +68,7 @@ const IndexPage = ({
           </Biography>
         </BiographyWrapper>
       </About>
-    </ContentWrapper>
+    </Wrapper>
   </Layout>
 )
 

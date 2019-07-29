@@ -8,26 +8,54 @@ module.exports = {
     siteUrl: config.siteUrl + pathPrefix,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-sharp',
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    // `gatsby-plugin-sharp`,
+    'gatsby-plugin-mdx',
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-unwrap-images',
-          },
-          {
-            resolve: 'gatsby-remark-images',
+            resolve: `gatsby-remark-custom-image-component`,
             options: {
-              maxWidth: 1024,
+              // plugin options
+              componentName: 'image-wrapper',
+              imagePropName: 'src',
+              sharpMethod: 'fluid',
+              // fluid's arguments
               quality: 90,
-              linkImagesToOriginal: true,
+              maxWidth: 800,
             }
-        }
-      ]},
+          },
+        ],
+      }
     },
+    // {
+    //   resolve: 'gatsby-plugin-mdx',
+    //   options: {
+    //     gatsbyRemarkPlugins: [
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //           options: {
+    //             maxWidth: 1024,
+    //             quality: 90,
+    //             linkImagesToOriginal: true,
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-transformer-remark`,
+    //   options: {
+    //     plugins: [
+    //       `gatsby-remark-unwrap-images`, 
+    //       `gatsby-remark-picture`,
+
+    //   ]},
+    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -39,27 +67,6 @@ module.exports = {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: config.googleAnalyticsID,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-mdx',
-      options: {
-        gatsbyRemarkPlugins: [
-          {
-            resolve: 'gatsby-remark-external-links',
-            options: {
-              target: '_blank',
-              rel: 'nofollow noopener noreferrer',
-            },
-          },
-          // TODO: Replace with "mdx-component-autolink-headers"
-          {
-            resolve: 'gatsby-remark-autolink-headers',
-            options: {
-              maintainCase: false,
-            },
-          },
-        ],
       },
     },
     'gatsby-plugin-catch-links',

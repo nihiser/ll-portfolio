@@ -26,13 +26,13 @@ const Category = styled.p`
 `
 
 const Divider = styled.span`
-  display: none;
-  flex-grow: 1;
+  flex-grow: 0;
   border-bottom: 1px solid black;
-  margin: 0 15px;
+  margin: 0 25px;
+  transition: flex-grow 1s;
 
   article:hover & {
-    display: block;
+    flex-grow: 1;
   }
 `
 

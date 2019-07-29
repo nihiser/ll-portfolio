@@ -12,6 +12,7 @@ const Content = styled.article`
 `
 
 const Title = styled.h1`
+  font-weight: 400;
   margin-bottom: 1rem;
   display: table-cell;
   vertical-align: middle;
@@ -25,6 +26,7 @@ const TitleWrapper = styled.div`
   display: table;
 
   .DesignLink {
+    color: black;
     display: table-cell;
     text-align: right;
     vertical-align: middle;

@@ -6,12 +6,11 @@ import styled from 'styled-components'
 import { Layout, Article, Wrapper, Header, SEO } from '../components'
 
 const Content = styled.div`
-  grid-column: 1/span 4;
-  padding: 1rem;
+  grid-column: 2/span 3;
 `
 
 const About = styled.div`
-  grid-column: 5 / span 2;
+  grid-column: 6 / -1;
   grid-row: 1 / 3;
   background: black;
   padding: 3rem 4rem;

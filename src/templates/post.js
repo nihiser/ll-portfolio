@@ -8,7 +8,7 @@ import { Layout, Wrapper, Header, SEO } from '../components'
 import config from '../../config'
 
 const Content = styled.article`
-  grid-column: 2 / -2;
+  grid-column: 3 / -3;
 `
 
 const Title = styled.h1`

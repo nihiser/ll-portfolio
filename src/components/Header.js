@@ -4,9 +4,8 @@ import styled from 'styled-components'
 import { darken, lighten } from 'polished'
 
 const Wrapper = styled.header`
-  grid-column: 1 / span 2;
-  margin: 10px 0;
-  padding: 1rem;
+  grid-column: 2 / span 2;
+  margin: auto 0;
 `
 
 const Content = styled.div`

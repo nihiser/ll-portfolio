@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
+    height: 100%;
   }
   ::selection {
     color: ${props => props.theme.colors.bg};

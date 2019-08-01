@@ -72,6 +72,14 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
   }
+
+  a {
+    color: #1F262D;
+
+    &:hover {
+      color: #5052FF
+    }
+  }
   
   .PostImageWrapper {
     grid-column: 1 / -1

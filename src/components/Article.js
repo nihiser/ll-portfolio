@@ -13,12 +13,25 @@ const StyledLink = styled(Link)`
 `
 
 const Title = styled.h2`
-  color: blue;
+  color: #1F262D;
+  font-size: 34px;
+  line-height: 55px;
+
+  &:before {
+    content: "↳";
+    color: #1F262D;
+  }
+
+  article:hover & {
+    color: #5052FF
+  }
 `
 
 const Category = styled.p`
-  color: black;
+  color: #1F262D;
   display: none;
+  font-size: 14px;
+  text-transform: uppercase;
 
   article:hover & {
     display: block;
@@ -35,6 +48,7 @@ const Divider = styled.span`
     flex-grow: 1;
   }
 `
+
 
 const Article = ({ category, title, slug }) => {
   return (

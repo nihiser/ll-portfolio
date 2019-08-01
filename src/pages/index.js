@@ -9,6 +9,12 @@ const Content = styled.div`
   grid-column: 2/span 3;
 `
 
+const ContentHeader = styled.h1`
+  color: #1F262D;
+  font-size: 34px;
+  line-height: 55px;
+`
+
 const About = styled.div`
   grid-column: 6 / -1;
   grid-row: 1 / 3;
@@ -29,7 +35,7 @@ const BiographyWrapper = styled.div`
   position: relative;
 `
 
-const Arrow = styled.div`
+const ArrowLogo = styled.div`
   width: 0px;
   height: 0px;
   border-left: 10px solid transparent;
@@ -46,10 +52,10 @@ const IndexPage = ({
     <Wrapper>
      <SEO postPath="/" />
       <Header>
-        <Arrow />
+        <ArrowLogo />
       </Header>
       <Content>
-        <h1>Selected client work</h1>
+        <ContentHeader>Selected client work</ContentHeader>
         {posts.map(post => 
         ( post.frontmatter.type == 'work' &&
           <Article
@@ -61,7 +67,7 @@ const IndexPage = ({
           )
         )}
         <hr></hr>
-        <h1>Personal projects</h1>
+        <ContentHeader>Personal projects</ContentHeader>
         {posts.map(post => 
           ( post.frontmatter.type == 'project' &&
             <Article

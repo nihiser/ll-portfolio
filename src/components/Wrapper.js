@@ -6,6 +6,8 @@ const Wrapper = styled.div`
   grid-template-rows: 50px auto;
   grid-column-gap: 30px;
   height: 100vh;
+  max-width: 1680px;
+  margin: 0 auto;
 `
 
 export default Wrapper

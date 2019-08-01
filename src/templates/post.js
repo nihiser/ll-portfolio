@@ -33,6 +33,15 @@ const TitleWrapper = styled.div`
   }
 `
 
+const DesignLink = styled.a`
+  color: #1F262D;
+  font-size: 18px;
+  
+  &:hover {
+    color: #5052FF
+   }
+`
+
 const Arrow = styled.div`
   width: 0px;
   height: 0px;
@@ -57,7 +66,7 @@ const Post = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
           <PostContent className="PostContentWrapper">
             <TitleWrapper>
               <Title>{post.title}</Title>
-              { post.designURL ?  <a href={ 'http://' + post.designURL } target="_blank" className="DesignLink">{post.designURL}</a> : ''}
+              { post.designURL ?  <DesignLink href={ 'http://' + post.designURL } target="_blank" className="DesignLink">{post.designURL}</DesignLink> : ''}
             </TitleWrapper>
             <MDXRenderer>{postNode.body}</MDXRenderer>
           </PostContent>

@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import { Layout, Wrapper, Header, SEO } from '../components'
-import config from '../../config'
 
 const Content = styled.article`
   grid-column: 3 / -3;
@@ -13,8 +12,8 @@ const Content = styled.article`
 
 const Title = styled.h1`
   font-weight: 400;
-  margin-bottom: 1rem;
-  display: table-cell;
+  grid-column: 1 / span 2 !important;
+  margin: 0;
   vertical-align: middle;
 `
 
@@ -23,11 +22,13 @@ const PostContent = styled.div`
   grid-template-columns: repeat(6, 1fr);
 `
 const TitleWrapper = styled.div`
-  display: table;
+  align-items: center;
+  display: inline-grid;
+  grid-template-columns: repeat(5, 1fr);
 
   .DesignLink {
     color: black;
-    display: table-cell;
+    grid-column: 4 / span 2;
     text-align: right;
     vertical-align: middle;
   }

@@ -11,10 +11,12 @@ const Content = styled.article`
 `
 
 const Title = styled.h1`
-  font-weight: 400;
+  color: #1F262D;
+  font-family: 'SuisseIntl';
+  font-size: 34px;
+  line-height: 55px;
   grid-column: 1 / span 2 !important;
   margin: 0;
-  vertical-align: middle;
 `
 
 const PostContent = styled.div`
@@ -25,12 +27,12 @@ const TitleWrapper = styled.div`
   align-items: center;
   display: inline-grid;
   grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 2rem;
 
   .DesignLink {
-    color: black;
+    color: #1F262D;
     grid-column: 4 / span 2;
     text-align: right;
-    vertical-align: middle;
   }
 `
 

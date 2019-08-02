@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import { Layout, Article, Wrapper, Header, SEO } from '../components'
@@ -24,15 +24,21 @@ const About = styled.div`
 `
 
 const Biography = styled.p`
+  font-family: 'SuisseIntl';
+  font-size: 26px;
   color: white;
   position: absolute;
   bottom: 0;
-  line-height: 1.5;
+  line-height: 40px;
 `
 
 const BiographyWrapper = styled.div`
   height: 100%;
   position: relative;
+`
+
+const BioFont = styled.span`
+  font-family: 'SuisseWorks';
 `
 
 const ArrowLogo = styled.div`
@@ -82,9 +88,9 @@ const IndexPage = ({
       <About>
         <BiographyWrapper>
           <Biography>
-            Hey! I'm Lauren, a designer and cook based in Dayton, OH.
-            In the past I've been a product designer, cheese connoisseur, and seamstress.
-            These days, I make pasta and research North Korea in my free time.
+            Hey! I'm Lauren, a <BioFont>designer</BioFont> and cook based in Dayton, OH.
+            In the past I've been a <BioFont>product designer</BioFont>, cheese connoisseur, and seamstress.
+            These days, I make pasta and research <BioFont>North Korea</BioFont> in my free time.
           </Biography>
         </BiographyWrapper>
       </About>

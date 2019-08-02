@@ -1,12 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { MDXProvider } from '@mdx-js/react'
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 import SEO from './SEO'
 import theme from '../../config/theme'
+import Fonts from './Fonts'
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "SuisseIntl";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Suisse Intl"), local("Suisse-Intl"), url(${Fonts.SuisseIntl}) format("woff");
+  }
+
+  @font-face {
+    font-family: "SuisseWorks";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Suisse Works"), local("Suisse-Works"), url(${Fonts.SuisseWorks}) format("woff");
+  }
+
   *,
   *:before,
   *:after {
@@ -18,50 +33,20 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     height: 100%;
   }
-  ::selection {
-    color: ${props => props.theme.colors.bg};
-    background: ${props => props.theme.colors.primary};
-  }
+
   html {
-    font-family: ${props => props.theme.fontFamily.sansSerif};
+    font-family: 'SuisseIntl';
     font-size: ${props => props.theme.baseFontSize};
-    h1 {
-      font-size: 3.052rem;
-    }
-    h2 {
-      font-size: 2.441rem;
-    }
-    h3 {
-      font-size: 1.953rem;
-    }
-    h4 {
-      font-size: 1.563rem;
-    }
-    h5 {
-      font-size: 1.25rem;
-    }
+    
     @media (max-width: ${props => props.theme.breakpoints.phone}) {
       font-size: 16px;
-      h1 {
-        font-size: 2.488rem;
-      }
-      h2 {
-        font-size: 2.074rem;
-      }
-      h3 {
-        font-size: 1.728rem;
-      }
-      h4 {
-        font-size: 1.444rem;
-      }
-      h5 {
-        font-size: 1.2rem;
-      }
     }
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    color: ${props => props.theme.colors.grey.dark};
+  p {
+    margin: 0 0 1.5rem 0;
+    font-size: 18px;
+    line-height: 28px;
   }
 
   .PostContentWrapper *:not(.PostImageWrapper){
@@ -74,6 +59,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
+    font-family: 'SuisseWorks';
     color: #1F262D;
 
     &:hover {

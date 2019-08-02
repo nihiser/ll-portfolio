@@ -29,8 +29,10 @@ const Title = styled.h2`
 
 const Category = styled.p`
   color: #1F262D;
+  font-family: 'SuisseWorks';
   display: none;
   font-size: 14px;
+  margin-bottom: 0;
   text-transform: uppercase;
 
   article:hover & {

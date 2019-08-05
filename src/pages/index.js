@@ -6,7 +6,11 @@ import styled from 'styled-components'
 import { Layout, Article, Wrapper, Header, SEO } from '../components'
 
 const Content = styled.div`
-  grid-column: 2/span 3;
+  grid-column: 2/ span 3;
+
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+    grid-column: 2 / -1;
+  }
 `
 
 const ContentHeader = styled.h1`
@@ -23,6 +27,19 @@ const About = styled.div`
   background: black;
   padding: 3rem 4rem;
   position: relative;
+
+  @media (max-width: ${props => props.theme.breakpoints.xltablet}) {
+    grid-column: 5 / -1;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+    grid-column: 1 / -1;
+    grid-row: -1;
+    padding: 3.125rem 0 0 0;
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 1fr 1fr 1fr 1fr 50px;
+    grid-column-gap: 30px;
+  }
 `
 
 const Biography = styled.p`
@@ -32,11 +49,19 @@ const Biography = styled.p`
   position: absolute;
   bottom: 0;
   line-height: 40px;
+
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+    position: relative;
+  }
 `
 
 const BiographyWrapper = styled.div`
   height: 100%;
   position: relative;
+
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+    grid-column: 2 / -2;
+  }
 `
 
 const BioFont = styled.span`

@@ -8,6 +8,15 @@ import { Layout, Wrapper, Header, SEO, Footer } from '../components'
 
 const Content = styled.article`
   grid-column: 3 / -3;
+
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+    grid-column: 2 / -2;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.phone}) {
+    grid-column: 1 / -1;
+  }
+
 `
 
 const Title = styled.h1`
@@ -17,6 +26,11 @@ const Title = styled.h1`
   line-height: 55px;
   grid-column: 1 / span 2 !important;
   margin: 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.phone}) {
+    margin: 0 !important;
+    grid-column: 1 / -1;
+  }
 `
 
 const PostContent = styled.div`
@@ -34,6 +48,11 @@ const TitleWrapper = styled.div`
     color: #1F262D;
     grid-column: 4 / span 2;
     text-align: right;
+
+    @media (max-width: ${props => props.theme.breakpoints.phone}) {
+      text-align: left;
+      padding-top: 15px;
+    }
   }
 `
 
@@ -44,6 +63,11 @@ const DesignLink = styled.a`
   &:hover {
     color: #5052FF
    }
+
+   @media (max-width: ${props => props.theme.breakpoints.phone}) {
+    margin: 0 !important;
+    grid-column: 1 / -1 !important;
+  }
 `
 
 const Arrow = styled.div`

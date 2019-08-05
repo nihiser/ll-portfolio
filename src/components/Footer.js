@@ -9,23 +9,52 @@ const Wrapper = styled.header`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+    grid-column: 2 / -2;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.phone}) {
+    grid-column: 1 / -1;
+    margin: 0 2rem;
+  }
+
 `
 
 const Email = styled.div`
   grid-column: 1;
   font-size: 34px;
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.phone}) {
+    grid-column: 1 / -1;
+  }
 `
 
 const Social = styled.div`
   grid-column: 2;
+
+  @media (max-width: ${props => props.theme.breakpoints.phone}) {
+    grid-column: 1 / -1;
+  }
 `
 
 const SocialList = styled.ul`
   list-style: none;
+  padding-left: 0;
 
   li {
     text-align: right;
     font-family: 'SuisseIntl';
+
+    @media (max-width: ${props => props.theme.breakpoints.phone}) {
+      text-align: left;
+      &:not(:last-child) {
+        padding-bottom: 15px;
+      }
+    }
 
     a {
       font-family: 'SuisseIntl';

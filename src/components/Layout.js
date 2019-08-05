@@ -54,7 +54,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .PostContentWrapper *:not(.PostImageWrapper){
-    grid-column: 2 / -1
+    grid-column: 2 / -1;
+
+    @media (max-width: ${props => props.theme.breakpoints.phone}) {
+      grid-column: 1 / -1;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
   }
   
   img {
@@ -75,6 +81,7 @@ const GlobalStyle = createGlobalStyle`
     grid-column: 1 / -1
     margin-top: 1.5rem;
     margin-bottom: 3.125rem;
+
   }
 
 `

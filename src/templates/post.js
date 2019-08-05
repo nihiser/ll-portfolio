@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import { Layout, Wrapper, Header, SEO } from '../components'
+import { Layout, Wrapper, Header, SEO, Footer } from '../components'
 
 const Content = styled.article`
   grid-column: 3 / -3;
@@ -12,7 +12,7 @@ const Content = styled.article`
 
 const Title = styled.h1`
   color: #1F262D;
-  font-family: 'SuisseIntl';
+  font-family: 'SuisseIntl' ;
   font-size: 34px;
   line-height: 55px;
   grid-column: 1 / span 2 !important;
@@ -28,6 +28,7 @@ const TitleWrapper = styled.div`
   display: inline-grid;
   grid-template-columns: repeat(5, 1fr);
   margin-bottom: 2rem;
+  margin-top: 6.25rem;
 
   .DesignLink {
     color: #1F262D;
@@ -74,6 +75,7 @@ const Post = ({ pageContext: { slug }, data: { mdx: postNode } }) => {
             <MDXRenderer>{postNode.body}</MDXRenderer>
           </PostContent>
         </Content>
+        <Footer />
       </Wrapper>
     </Layout>
   )

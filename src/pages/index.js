@@ -13,6 +13,8 @@ const ContentHeader = styled.h1`
   color: #1F262D;
   font-size: 34px;
   line-height: 55px;
+  margin-bottom: 0;
+  padding-top: 50px;
 `
 
 const About = styled.div`
@@ -72,7 +74,7 @@ const IndexPage = ({
           />
           )
         )}
-        <hr></hr>
+
         <ContentHeader>Personal projects</ContentHeader>
         {posts.map(post => 
           ( post.frontmatter.type == 'project' &&

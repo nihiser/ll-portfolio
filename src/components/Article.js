@@ -16,6 +16,9 @@ const Title = styled.h2`
   color: #1F262D;
   font-size: 34px;
   line-height: 55px;
+  font-family: 'SuisseIntl';
+  font-weight: 100;
+  margin: 0;
 
   &:before {
     content: "↳";

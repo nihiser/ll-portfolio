@@ -11,14 +11,14 @@ const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "SuisseIntl";
     font-style: normal;
-    font-weight: normal;
+    font-weight: 100;
     src: local("Suisse Intl"), local("Suisse-Intl"), url(${Fonts.SuisseIntl}) format("woff");
   }
 
   @font-face {
     font-family: "SuisseWorks";
     font-style: normal;
-    font-weight: normal;
+    font-weight: 100;
     src: local("Suisse Works"), local("Suisse-Works"), url(${Fonts.SuisseWorks}) format("woff");
   }
 
@@ -49,6 +49,10 @@ const GlobalStyle = createGlobalStyle`
     line-height: 28px;
   }
 
+  h1,  {
+    font-weight: 100;
+  }
+
   .PostContentWrapper *:not(.PostImageWrapper){
     grid-column: 2 / -1
   }
@@ -69,6 +73,8 @@ const GlobalStyle = createGlobalStyle`
   
   .PostImageWrapper {
     grid-column: 1 / -1
+    margin-top: 1.5rem;
+    margin-bottom: 3.125rem;
   }
 
 `

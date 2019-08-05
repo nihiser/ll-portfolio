@@ -1,12 +1,11 @@
 import Article from './Article'
-import Button from './Button'
 import Header from './Header'
 import Layout from './Layout'
 import PrevNext from './PrevNext'
-import SectionTitle from './SectionTitle'
 import SEO from './SEO'
 import Subline from './Subline'
 import Wrapper from './Wrapper'
 import Fonts from './Fonts'
+import Footer from './Footer'
 
-export { Article, Button, Header, Layout, PrevNext, SectionTitle, SEO, Subline, Wrapper, Fonts }
+export { Article, Header, Layout, PrevNext, SEO, Subline, Wrapper, Fonts, Footer }

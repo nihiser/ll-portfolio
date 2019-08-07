@@ -28,7 +28,7 @@ const Email = styled.div`
     text-decoration: none;
   }
 
-  @media (max-width: ${props => props.theme.breakpoints.phone}) {
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     grid-column: 1 / -1;
   }
 `
@@ -36,7 +36,7 @@ const Email = styled.div`
 const Social = styled.div`
   grid-column: 2;
 
-  @media (max-width: ${props => props.theme.breakpoints.phone}) {
+  @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     grid-column: 1 / -1;
   }
 `
@@ -44,12 +44,13 @@ const Social = styled.div`
 const SocialList = styled.ul`
   list-style: none;
   padding-left: 0;
+  margin: 0;
 
   li {
     text-align: right;
     font-family: 'SuisseIntl';
 
-    @media (max-width: ${props => props.theme.breakpoints.phone}) {
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
       text-align: left;
       &:not(:last-child) {
         padding-bottom: 15px;

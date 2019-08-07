@@ -17,7 +17,7 @@ module.exports = {
   userTwitter: '@internetbleu', // Twitter Username - Optional
   ogSiteName: '', // Facebook Site Name - Optional
   ogLanguage: 'en_US', // Facebook Language
-  googleAnalyticsID: '',
+  googleAnalyticsID: 'UA-145280593-1',
 
   // Manifest and Progress color
   // See: https://developers.google.com/web/fundamentals/web-app-manifest/

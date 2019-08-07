@@ -45,7 +45,7 @@ const SEO = props => {
       '@type': 'Person',
       name: config.author,
     },
-    copyrightYear: '2018',
+    copyrightYear: '2019',
     creator: {
       '@type': 'Person',
       name: config.author,
@@ -147,7 +147,6 @@ const SEO = props => {
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="image" content={image} />
-      <meta name="gatsby-starter" content="Gatsby Starter Minimal Blog" />
       <meta property="og:locale" content={config.ogLanguage} />
       <meta property="og:site_name" content={config.ogSiteName ? config.ogSiteName : ''} />
       <meta property="og:url" content={URL} />
@@ -168,6 +167,9 @@ const SEO = props => {
       {!article && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
       {article && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
       <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+
+      {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145280593-1"></script>
     </Helmet>
   )
 }

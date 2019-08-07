@@ -9,7 +9,9 @@ const Content = styled.div`
   grid-column: 2/ span 3;
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    grid-column: 2 / -1;
+    grid-column: 1 / -1;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
   }
 `
 
@@ -35,7 +37,7 @@ const About = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     grid-column: 1 / -1;
     grid-row: -1;
-    padding: 3.125rem 0 0 0;
+    padding: 3.125rem 0 2rem 0;
     display: grid;
     grid-template-columns: 50px 1fr 1fr 1fr 1fr 1fr 1fr 50px;
     grid-column-gap: 30px;
@@ -60,12 +62,18 @@ const BiographyWrapper = styled.div`
   position: relative;
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-    grid-column: 2 / -2;
+    grid-column: 1 / -1;
+    margin: 0 2rem;
   }
 `
 
 const BioFont = styled.span`
   font-family: 'SuisseWorks';
+`
+
+const BioLink = styled.a`
+  color: #5052FF;
+  text-decoration: none;
 `
 
 const ArrowLogo = styled.div`
@@ -112,12 +120,17 @@ const IndexPage = ({
             )
           )}
       </Content>
+      <div className="BlueEye">
+        
+
+      </div>
       <About>
         <BiographyWrapper>
           <Biography>
             Hey! I'm Lauren, a <BioFont>designer</BioFont> and cook based in Dayton, OH.
             In the past I've been a <BioFont>product designer</BioFont>, cheese connoisseur, and seamstress.
-            These days, I make pasta and research <BioFont>North Korea</BioFont> in my free time.
+            These days, I make pasta and research <BioFont>North Korea</BioFont> in my free time. 
+            Click <BioLink href="mailto:laurenalandes@gmail.com">here</BioLink> to speak to me!
           </Biography>
         </BiographyWrapper>
       </About>

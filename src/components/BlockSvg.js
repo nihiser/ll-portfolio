@@ -4,6 +4,11 @@ import styled from 'styled-components'
 const SvgWrapper = styled.div`
   position: relative;
   height: 100%;
+  grid-column: 5;
+
+  @media (max-width: ${props => props.theme.breakpoints.xltablet}) {
+    display: none;
+  }
 `
 
 const StyledSVG = styled.svg`
@@ -12,14 +17,22 @@ const StyledSVG = styled.svg`
   right: 0;
   margin-right: -30px;
 
-  @media (max-width: ${props => props.theme.breakpoints.xltablet}) {
-    display: none;
-  }
 `
 
-const BlockSvg = () => (
+const BlockSvg = ({
+  width = "111px",
+  height = "618px",
+  viewBox = "0 0 111 618"
+}) => (
   <SvgWrapper>
-    <StyledSVG width="111px" height="618px" viewBox="0 0 111 618">
+    <StyledSVG 
+      width={width}
+      height={height} 
+      viewBox={viewBox}
+      xmlns="http://www.w3.org/2000/svg" 
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      >
+      
       <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Portfolio" transform="translate(-849.000000, -295.000000)">
           <g id="Group" transform="translate(849.000000, 295.000000)">

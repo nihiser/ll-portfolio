@@ -7,5 +7,6 @@ import Subline from './Subline'
 import Wrapper from './Wrapper'
 import Fonts from './Fonts'
 import Footer from './Footer'
+import BlockSvg from './BlockSvg'
 
-export { Article, Header, Layout, PrevNext, SEO, Subline, Wrapper, Fonts, Footer }
+export { Article, Header, Layout, PrevNext, SEO, Subline, Wrapper, Fonts, Footer, BlockSvg }

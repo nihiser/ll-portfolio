@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import { Layout, Article, Wrapper, Header, SEO } from '../components'
+import { Layout, Article, Wrapper, Header, SEO, BlockSvg } from '../components'
 
 const Content = styled.div`
   grid-column: 2/ span 3;
@@ -32,6 +32,7 @@ const About = styled.div`
 
   @media (max-width: ${props => props.theme.breakpoints.xltablet}) {
     grid-column: 5 / -1;
+    grid-row: 1 / 4;
   }
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
@@ -120,10 +121,7 @@ const IndexPage = ({
             )
           )}
       </Content>
-      <div className="BlueEye">
-        
-
-      </div>
+      <BlockSvg />
       <About>
         <BiographyWrapper>
           <Biography>

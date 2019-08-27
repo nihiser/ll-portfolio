@@ -4,7 +4,7 @@ module.exports = {
   siteTitle: 'Lauren Landes', // Navigation and Site Title
   siteTitleAlt: 'A portfolio of works by Lauren Landes', // Alternative Site title for SEO
   siteTitleManifest: 'LaurenLandes',
-  siteUrl: 'https://laurenlandes.com/', // Domain of your site. No trailing slash!
+  siteUrl: 'https://internetbl.eu', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteHeadline: 'A portfolio of works by Lauren Landes', // Headline for schema.org JSONLD
   siteBanner: '', // Your image for og:image tag. You can find it in the /static folder

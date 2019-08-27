@@ -33,7 +33,7 @@ const BlockSvg = ({
       xmlnsXlink="http://www.w3.org/1999/xlink"
       >
       
-      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="Portfolio" transform="translate(-849.000000, -295.000000)">
           <g id="Group" transform="translate(849.000000, 295.000000)">
           <rect id="Rectangle" fill="#BDBEFF" x="0" y="222" width="111" height="396"></rect>

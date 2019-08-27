@@ -11,7 +11,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
-    // `gatsby-plugin-sharp`,
     'gatsby-plugin-mdx',
     {
       resolve: `gatsby-transformer-remark`,
@@ -20,11 +19,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-custom-image-component`,
             options: {
-              // plugin options
               componentName: 'image-wrapper',
               imagePropName: 'src',
               sharpMethod: 'fluid',
-              // fluid's arguments
               quality: 90,
               maxWidth: 800,
             }
@@ -32,41 +29,11 @@ module.exports = {
         ],
       }
     },
-    // {
-    //   resolve: 'gatsby-plugin-mdx',
-    //   options: {
-    //     gatsbyRemarkPlugins: [
-    //       {
-    //         resolve: `gatsby-remark-images`,
-    //           options: {
-    //             maxWidth: 1024,
-    //             quality: 90,
-    //             linkImagesToOriginal: true,
-    //         },
-    //       },
-    //     ],
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-transformer-remark`,
-    //   options: {
-    //     plugins: [
-    //       `gatsby-remark-unwrap-images`, 
-    //       `gatsby-remark-picture`,
-
-    //   ]},
-    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'post',
         path: `${__dirname}/blog`,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: "UA-145280593-1",
       },
     },
     'gatsby-plugin-catch-links',
@@ -82,7 +49,6 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'standalone',
-        // icon: config.favicon,
       },
     },
     'gatsby-plugin-offline',

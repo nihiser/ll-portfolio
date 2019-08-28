@@ -84,7 +84,7 @@ const Footer = () => {
       </Email>
       <Social>
         <SocialList>
-          <li><a href="https://dribbble.com/laurenlandes" target="_blank">dribbble</a></li>
+          <li><a href="https://dribbble.com/internetbleu" target="_blank">dribbble</a></li>
           <li><a href="https://www.instagram.com/internetbleu/" target="_blank">instagram</a></li>
           <li><a href="https://twitter.com/internetbleu" target="_blank">twitter</a></li>
         </SocialList>
